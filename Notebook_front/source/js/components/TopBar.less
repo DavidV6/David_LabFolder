@@ -1,0 +1,79 @@
+.topbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%; 
+    height: 5rem;
+    align-items: center;
+    border-bottom-color: lightgrey;
+    border-bottom-style: solid;
+    background-color: white;
+
+    #topbar-icon {
+        width: 10rem; 
+        height: 3rem;
+    }
+
+    #topbar-title {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        svg {
+            font-size: 1rem;
+        }
+    }
+
+    #topbar-content {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+
+        #topbar-menu{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            margin-left: auto;
+            margin-right: 5rem;
+
+            .topbar-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                margin: 0rem 1rem;
+                border: none;
+                background-color: transparent;
+                text-decoration: none;
+                color: black;
+                padding: 0rem 0.5rem;
+
+                &.active {
+                    background-color: lightgrey;
+                }
+
+                &:hover {
+                    background-color: lightgrey;
+                }
+
+                svg {
+                    font-size: 1rem;
+                }
+
+            }
+        }
+
+        #topbar-user {
+            display: flex;
+            * {
+                margin: 0rem 1rem;
+            }
+            svg {
+                font-size: 1rem;
+            }
+        }
+
+    }
+
+}
