@@ -1,10 +1,9 @@
 package com.labforward.notebook;
 
 import java.util.Date;
+import java.util.UUID;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -12,29 +11,28 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "NOTEBOOK")
-public class Notebook {
+public class Notebook implements NotebookBase {
 
 	@Id
-	@GeneratedValue
-	Long id;
-	String userName;
-	String noteBookName;
-	String text;
+	private UUID id;
+	private String userName;
+	private String noteBookName;
+	private String text;
 	@Temporal(TemporalType.DATE)
-	Date dateUpdated;
+	private Date dateUpdated;
 	
 	public Notebook() {
 		super();
 	}
 	
-	public Notebook(Long id, String userName, String noteBookName) {
+	public Notebook(UUID id, String userName, String noteBookName) {
 		super();
 		this.id = id;
 		this.userName = userName;
 		this.noteBookName = noteBookName;
 	}
 
-	public Notebook(Long id, String userName, String noteBookName, String text, Date dateUpdated) {
+	public Notebook(UUID id, String userName, String noteBookName, String text, Date dateUpdated) {
 		super();
 		this.id = id;
 		this.userName = userName;
@@ -43,11 +41,11 @@ public class Notebook {
 		this.dateUpdated = dateUpdated;
 	}
 
-	public Long getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 

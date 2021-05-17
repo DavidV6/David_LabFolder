@@ -1,0 +1,58 @@
+
+#notebook-content {
+    display: flex;
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    overflow: auto;
+    flex-wrap: wrap;
+
+    .notebook-content-holder {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: calc(50% - 2rem);
+        min-height: calc(50% - 2rem);
+        max-height: calc(100% - 10rem);
+        overflow: auto;
+        margin: 1rem 1rem;
+
+        .notebook-content-filter {
+            display: flex;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2rem;
+            align-items: center;
+            background-color: #7eaecb;
+
+            &.left {
+                justify-content: flex-start;
+            }
+
+            &.center {
+                justify-content: center;
+            }
+
+            &.right {
+                justify-content: flex-end;
+            }
+
+            * {
+                margin: 0rem 0.5rem
+            }
+
+            input {
+                height: 1rem;
+            }
+
+        }
+
+        .notebook-content-container {
+            height: calc(100% - 4rem);
+        }
+
+    }
+
+}

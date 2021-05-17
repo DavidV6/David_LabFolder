@@ -39,11 +39,11 @@ class TopBar extends Component {
                             <i className="fas fa-book" />
                             Notebook
                         </MenuLink>
-                        <MenuLink>
+                        <MenuLink to="/manage">
                             <i className="fas fa-cogs" />
                             Manage
                         </MenuLink>
-                        <MenuLink>
+                        <MenuLink to="/dashboard">
                             <i className="fab fa-flipboard" />
                             Dashboard
                         </MenuLink>

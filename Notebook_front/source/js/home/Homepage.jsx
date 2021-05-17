@@ -10,7 +10,12 @@ class Homepage extends Component {
         this.props.initHomepage();
     }
 
+    openNotebook(notebookId) {
+        this.props.history.push({ pathname: 'notebook', state: { notebookId: notebookId } });
+    }
+
     render() {
+        let that = this;
         return (
             <div id="homepage">
                 <div id="homepage-table">
@@ -25,18 +30,22 @@ class Homepage extends Component {
 
                     <div id="homepage-table-content">
                         <table>
-                            <tr>
-                                <th>Notebook Name</th>
-                                <th>User</th>
-                                <th>Date</th>
-                            </tr>
-                            {this.props.listNotebooks.map(function (notebook, idx) {
-                                return (<tr>
-                                    <td>{notebook.noteBookName}</td>
-                                    <td>{notebook.userName}</td>
-                                    <td>{notebook.dateUpdated}</td>
-                                </tr>)
-                            })}
+                            <tbody>
+                                <tr>
+                                    <th>Notebook Name</th>
+                                    <th>User</th>
+                                    <th>Date</th>
+                                </tr>
+                                {this.props.listNotebooks.map(function (notebook, idx) {
+                                    return (<tr key={idx}
+                                        style={{ cursor: "pointer" }}
+                                        onClick={() => that.openNotebook(notebook.id)}>
+                                        <td>{notebook.noteBookName}</td>
+                                        <td>{notebook.userName}</td>
+                                        <td>{notebook.dateUpdated}</td>
+                                    </tr>)
+                                })}
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -51,7 +60,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        initHomepage: () => HomepageActions.initHomepage(dispatch)
+        initHomepage: () => HomepageActions.initHomepage(dispatch),
     }
 }
 

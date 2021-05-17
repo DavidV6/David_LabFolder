@@ -1,0 +1,33 @@
+
+.notifier {
+    display: flex;
+    position: fixed;
+    width: 20rem;
+    height: 5rem;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 10px;
+    border-color: lightgrey;
+    border-width: 1px;
+    padding: 2rem 1rem;
+
+    &.success {
+        background-color: lightgreen;
+    }
+
+    &.warning {
+        background-color: lightsalmon;
+    }
+
+    &.error {
+        background-color: lightcoral;
+    }
+
+    #closeIcon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+    }
+
+}
