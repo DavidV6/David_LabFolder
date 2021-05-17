@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,17 +18,17 @@ public class NotebookController {
 	@Autowired
 	private NotebookBean notebookBean;
 	
-	@GetMapping("/notebooks")
+	@RequestMapping(value = "/notebooks", method=RequestMethod.GET)
 	public List<NotebookBase> getAllNoteBooks() {
 		return notebookBean.listOfNotebooks();
 	}
 	
-	@GetMapping("/notebook")
+	@RequestMapping(value = "/notebook", method=RequestMethod.GET)
 	public Notebook findNotebookById(@RequestParam String id) {
 		return notebookBean.findNotebookById(UUID.fromString(id));
 	}
 	
-	@GetMapping("/notebook/search")
+	@RequestMapping(value = "/notebook/search", method=RequestMethod.GET)
 	public SearchObject searchNotebook(@RequestParam String idNotebook, @RequestParam String searchWord) {
 		return notebookBean.searchWords(UUID.fromString(idNotebook), searchWord);
 	}

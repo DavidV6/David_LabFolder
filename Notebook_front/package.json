@@ -22,6 +22,6 @@
     },
     "scripts": {
         "start": "parcel ./source/index.html --open",
-        "build": "parcel build ./source.index.html"
+        "build": "parcel build ./source/index.html --out-dir production --public-url ."
     }
 }

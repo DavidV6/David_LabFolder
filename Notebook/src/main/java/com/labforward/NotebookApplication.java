@@ -8,7 +8,7 @@ public class NotebookApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NotebookApplication.class, args);
-		System.out.println("Hello world");
+		System.out.println("Server started");
 	}
 
 }
