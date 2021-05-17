@@ -14,3 +14,10 @@ For more detailed and internal use of each side (back & front) there are README 
 ## Usage
 
 To start the application run the file **RunApplication.bat** or **RunApplication.sh** based on the operating system available.
+
+## Explore
+
+A basic documentation of the rest api is generated with swagger-2.<br>
+To acces the rest api documentation the 2 following links are active:
+* Whithout UI -> http://localhost:8080/v2/api-docs
+* With UI     -> http://localhost:8080/swagger-ui.html#/
