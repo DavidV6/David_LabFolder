@@ -14,6 +14,8 @@ For more detailed and internal use of each side (back & front) there are README 
 ## Usage
 
 To start the application run the file **RunApplication.bat** or **RunApplication.sh** based on the operating system available.
+After the link below is available for the application:<br>
+http://localhost:8080/index.html
 
 ## Explore
 
